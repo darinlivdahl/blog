@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs") %>
+
+<div class="mx-auto mt-5" style="max-width: 800px;">
+    <h1 style="margin-bottom: 2rem;"><%= locals.data.heading %></h1>
+<% if (locals.blogPosts.length > 0) { %>
+    <% locals.blogPosts.forEach(post => { %>
+    <div class="pb-4">
+        <small><%= post.date %></small>
+        <h2><%= post.title %></h2>
+        <p><%= post.body %></p>
+        <% if (locals.loggedIn) { %>
+        <p>
+            <a class="btn btn-dark" href="/edit/<%= post.id %>">Edit</a>
+            <a class="btn btn-danger" href="/delete/<%= post.id %>">Delete</a>
+        </p>
+        <% } %>
+        <hr>
+    </div>
+    <% }); %>
+<% } else { %>
+    <p>There are no blog posts at this time.</p>
+<% } %>
+</div>
+
+<%- include("partials/footer.ejs") %>
+        

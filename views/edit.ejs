@@ -1,0 +1,18 @@
+<%- include("partials/header.ejs") %>
+
+<% if (locals.postData) { %>
+<form action="/editPost" class="mx-auto mt-5" style="width: 500px;" method="post">
+    <input type="hidden" name="postId" value="<%= postData.id %>">
+    <div class="mb-3">
+        <label for="titleInput" class="form-label">Title</label>
+        <input type="text" class="form-control" id="titleInput" name="titleInput" value="<%= postData.title %>">
+    </div>
+    <div class="mb-3">
+        <label for="bodyInput" class="form-label">Body</label>
+        <textarea rows="6" class="form-control" id="bodyInput" name="bodyInput"><%= postData.body %></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+<% } %>
+
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs") %>
+
+<form action="/loginUser" class="mx-auto mt-5" style="width: 350px;" method="post">
+    <h1>Login</h1>
+    <div class="mb-3">
+        <label for="usernameInput" class="form-label">Username</label>
+        <input type="email" class="form-control" id="usernameInput" name="userName" aria-describedby="usernameHelp">
+        <div id="usernameHelp" class="form-text">Username must be in the form of an email address.</div>
+    </div>
+    <div class="mb-3">
+        <label for="passwordInput" class="form-label">Password</label>
+        <input type="password" maxlength="12" class="form-control" id="passwordInput" name="password">
+    </div>
+    <!-- <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div> -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<%- include("partials/footer.ejs") %>
